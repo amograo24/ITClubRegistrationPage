@@ -10,12 +10,14 @@
         <style>
             #app {
                 text-align: center;
-                font-family: sans-serif;
+                font-family: "Ubuntu";
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             #question {
-                /* font-size: 120px; */
-                font-size: 750%;
+                font-size: 7em;
             }
 
             .incorrect {
@@ -94,6 +96,10 @@
                 display: flex;
                 justify-content: center;
                 /* text-align: center; */
+            }
+            .orange {
+                margin-top: 20px;
+                color: #ee9b00;
             }
             /* #next_div {
                 right: 0;
@@ -202,7 +208,7 @@
                 }
                 return (
                     <div>
-                        <div className={state.incorrect ? "white" : "white"} id="question">{questions[state.question][0]}</div>
+                        <div className={state.incorrect ? "orange" : "orange"} id="question">{questions[state.question][0]}</div>
                         <input autoFocus={true} onKeyPress={inputKeyPress} onChange={updateResponse} value={state.response} className="input"/> 
                         <div className="white">Attempts: {state.attempts}</div>
                         <div className={state.incorrect ? "incorrect" : "correct"}>Incorrect Answer! Try again.</div>
